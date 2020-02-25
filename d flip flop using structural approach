@@ -1,0 +1,24 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity maincircuit is
+port(x,clk:in bit;
+	y:out bit);		
+end  maincircuit;
+entity dff is
+port(d,clock:in bit;q:out bit);
+end entity dff;
+architecture dff1 of dff is
+begin
+q<=d and clock;
+end architecture dff1;
+architecture main of maincircuit is 
+component dff is 
+port(d,clock:in bit;
+q:out bit);
+end component dff;
+signal g1,g2: bit;
+begin
+D1:dff port map(d=>x,clock=>clk,q=>g1);
+D2:dff port map(d=>g1,clock=>clk,q=>g2);
+D3:dff port map(d=>g2,clock=>clk,q=>y);
+end architecture main; 
