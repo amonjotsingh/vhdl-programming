@@ -1,0 +1,69 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+use IEEE.NUMERIC_STD.ALL;
+
+library UNISIM;
+use UNISIM.VComponents.all;
+
+entity src is
+    Port ( q0 : inout  STD_LOGIC_VECTOR (2 downto 0) ;
+			  q1 : inout  STD_LOGIC_VECTOR (2 downto 0);
+			  q2 : inout  STD_LOGIC_VECTOR (2 downto 0);
+			  q3 : inout  STD_LOGIC_VECTOR (2 downto 0);
+			  q4 : inout  STD_LOGIC_VECTOR (2 downto 0);
+			  q5 : inout  STD_LOGIC_VECTOR (2 downto 0);
+			  q6 : inout  STD_LOGIC_VECTOR (2 downto 0);
+			  q7 : inout  STD_LOGIC_VECTOR (2 downto 0);
+			  s : in  STD_LOGIC_vector(2 downto 0);
+			  i : in  STD_LOGIC_VECTOR (2 downto 0);
+			  o0 : out  STD_LOGIC_VECTOR (2 downto 0) ;
+			  o1 : out  STD_LOGIC_VECTOR (2 downto 0);
+			  o2 : out  STD_LOGIC_VECTOR (2 downto 0);
+			  o3 : out  STD_LOGIC_VECTOR (2 downto 0);
+			  o4 : out STD_LOGIC_VECTOR (2 downto 0);
+			  o5 : out  STD_LOGIC_VECTOR (2 downto 0);
+			  o6 : out  STD_LOGIC_VECTOR (2 downto 0);
+			  o7 : out  STD_LOGIC_VECTOR (2 downto 0));
+end src;
+
+architecture Behavioral of src is
+
+begin
+process(s)
+begin
+if (s="000") then
+q0<=i; 
+ else if(s="001") then
+q1<=i;
+ else if(s="010") then
+q2<=i;
+ else if(s="011") then
+q3<=i;
+ else if(s="100") then
+q4<=i;
+ else if(s="101") then
+q5<=i;
+ else if(s="110") then
+q6<=i;
+ else if(s="111") then
+q7<=i;
+end if;
+end if;
+end if;
+end if;
+end if;
+end if;
+end if;
+end if;
+
+end process;
+o0<=q0;
+o1<=q1;
+o2<=q2;
+o3<=q3;
+o4<=q4;
+o5<=q5;
+o6<=q6;
+o7<=q7;
+end Behavioral;
