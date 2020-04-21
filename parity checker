@@ -1,0 +1,27 @@
+library IEEE;
+
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity parchec is
+
+Port ( input : in STD_LOGIC_VECTOR (8 downto 0);
+
+odd : out STD_LOGIC;
+
+even : out STD_LOGIC);
+
+end parchec;
+
+architecture Behavioral of parchec is
+
+signal S:std_logic;
+
+begin
+
+S<= input(7)xor input(6)xor input(5)xor input(4)xor input(3)xor input(2)xor input(1)xor input(0);
+
+even<=not(s);
+
+odd<=(s);
+
+end Behavioral;
